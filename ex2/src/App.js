@@ -1,9 +1,10 @@
 import './Asseste/Styles/App.css';
+import Button from './Hooks/Button';
 
 function App() {
   return (
     <div className="App">
-        <h2>hello</h2>
+        <Button />
     </div>
   );
 }
