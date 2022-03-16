@@ -19,14 +19,14 @@ const Login = () => {
         <h4 className='text-light my-4'>خوش آمدید</h4>
         <Form.Control 
             size='sm' 
-            className='inputEmail' 
+            className='login inputEmail' 
             type="email" 
             placeholder="پست الکترونیکی" 
         />
         <div className='inputpassword-div'>
         <Form.Control 
             size='sm' 
-            className='inputPassword my-4' 
+            className='login inputPassword my-4' 
             type="password" 
             placeholder="کلمه عبور"
         />
