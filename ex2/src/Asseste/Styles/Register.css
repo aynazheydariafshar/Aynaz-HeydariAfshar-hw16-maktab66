@@ -6,12 +6,8 @@
     color: rgb(194, 194, 194) !important;
 }
 
-.register option{
+.selectEducation option{
     color: white;
     background-color: rgb(109, 108, 108);
     font-size: 15px;
-}
-
-.hide{
-    display: none;
 }
