@@ -20,7 +20,7 @@ const Login = () => {
     }
 
     return <Form className='p-4' onSubmit={handleLoginSubmit}>
-        <h4 className='text-light my-4'>خوش آمدید</h4>
+        <h5 className='text-light my-4'>خوش آمدید</h5>
         <Form.Control 
             size='sm' 
             className='login inputEmail' 
