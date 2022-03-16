@@ -1,0 +1,19 @@
+.inputEmail{
+    direction: rtl;
+}
+
+.inputPassword{
+    direction: rtl;
+}
+
+.link-forget{
+    text-decoration: none;
+    color: rgb(80, 187, 151);
+    font-size: 13px;
+    text-align: right;
+}
+
+.row-flex{
+    display: flex;
+    flex-direction: column;
+}
