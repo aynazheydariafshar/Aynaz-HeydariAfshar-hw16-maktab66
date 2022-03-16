@@ -15,13 +15,18 @@ const Login = () => {
         setPasswordShown(passwordShown ? false : true);
     };
     
-    return <Form className='p-4'>
+    const handleLoginSubmit = () =>{
+        
+    }
+
+    return <Form className='p-4' onSubmit={handleLoginSubmit}>
         <h4 className='text-light my-4'>خوش آمدید</h4>
         <Form.Control 
             size='sm' 
             className='login inputEmail' 
             type="email" 
             placeholder="پست الکترونیکی" 
+            required
         />
         <div className='inputpassword-div'>
         <Form.Control 
@@ -29,6 +34,7 @@ const Login = () => {
             className='login inputPassword my-4' 
             type={passwordShown ? "text" : "password"} 
             placeholder="کلمه عبور"
+            required
         />
         <i onClick={togglePasswordVisiblity}>{passwordShown ? eye : noteye }</i>
         </div>

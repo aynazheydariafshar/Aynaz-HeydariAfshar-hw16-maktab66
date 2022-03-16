@@ -1,12 +1,26 @@
 import './Asseste/Styles/App.css';
-import Button from './Hooks/ButtonChangePage';
+import ButtonChangePage from './Hooks/ButtonChangePage';
+import {useState} from "react";
 import Login from './Hooks/Login';
+import Register from "./Hooks/Register";
 
 function App() {
+  const [status , statestatus] = useState('login');
+
+  const radioHandler = (input) => {
+    statestatus(input)
+  }
+  
   return (
     <div className="App">
-        <Button />
-        <Login />
+        <ButtonChangePage 
+          checkitregister = {status === 'register'}
+          checkitlogin = {status === 'login'}
+          clicklogin = {(e) => radioHandler(e.target.value)}
+          clickregister = {(e) => radioHandler(e.target.value)}
+        />
+        {status === 'login' && <Login />}
+        {status === 'register' && <Register />}
     </div>
   );
 }

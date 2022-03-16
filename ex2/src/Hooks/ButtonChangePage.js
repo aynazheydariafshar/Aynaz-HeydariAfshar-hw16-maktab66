@@ -1,15 +1,29 @@
-import { memo} from "react";
-import { Form } from "react-bootstrap";
+import {memo} from "react";
 import '../Asseste/Styles/ButtonChangePage.css'
 
-const Button = () => {
-    return <Form className="lr-form">
-        <input type="radio" id="r-register" name="form-switch" value="register" />
-        <label for="r-register">ثپت نام</label>
-        <input type="radio" id="r-login" name="form-switch" value='login' checked />
-        <label for="r-login">ورود</label>
-    </Form>
-}
 
+const Button = ({clickregister,clicklogin,checkitlogin,checkitregister}) => {
+    return <div className="lr-form">
+        <input 
+            type="radio" 
+            id="r-register" 
+            name="form-switch" 
+            value="register"  
+            onClick={clickregister}
+            checked = {checkitregister}
+        />
+        <label for="r-register">ثپت نام</label>
+
+        <input 
+            type="radio" 
+            id="r-login" 
+            name="form-switch" 
+            value='login' 
+            onClick={clicklogin}
+            checked = {checkitlogin}
+        />
+        <label for="r-login">ورود</label>
+    </div>
+}
 
 export default memo(Button);
