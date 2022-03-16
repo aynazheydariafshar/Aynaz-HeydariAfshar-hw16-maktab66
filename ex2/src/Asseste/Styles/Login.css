@@ -3,6 +3,7 @@
     background-color: transparent !important;
     border-radius: 0 !important;
     border-color: rgb(109, 108, 108) !important;
+    color: white !important;
 }
 
 .inputpassword-div{
@@ -14,6 +15,11 @@ i{
     left: 4%;
     top: 13%;
     color: white;
+}
+
+i:hover{
+    color: rgb(80, 187, 151);
+    cursor: pointer;
 }
 
 .link-forget{

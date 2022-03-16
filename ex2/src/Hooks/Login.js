@@ -1,18 +1,18 @@
-import React from 'react';
+import {useState} from 'react';
 import {Form} from 'react-bootstrap';
 import '../Asseste/Styles/Login.css'
 import SubmitButton from './SubmitButton';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { useForm } from "react-hook-form";
+import {FaEye , FaEyeSlash} from 'react-icons/fa'
+
 
 const Login = () => {
-    const eye = <FontAwesomeIcon icon={faEye} />;
-    
-    const { login, handleSubmit } = useForm();
-    
-    const onSubmit = data => {
-        console.log(data);
+    const eye = <FaEye />;
+    const noteye = <FaEyeSlash />;
+
+    const [passwordShown, setPasswordShown] = useState(false);
+
+    const togglePasswordVisiblity = () => {
+        setPasswordShown(passwordShown ? false : true);
     };
     
     return <Form className='p-4'>
@@ -27,14 +27,14 @@ const Login = () => {
         <Form.Control 
             size='sm' 
             className='login inputPassword my-4' 
-            type="password" 
+            type={passwordShown ? "text" : "password"} 
             placeholder="کلمه عبور"
         />
-        <i>{eye}</i>
+        <i onClick={togglePasswordVisiblity}>{passwordShown ? eye : noteye }</i>
         </div>
         <div className='row-flex'>
             <a href="#" class="link-forget mb-3">فراموش کردید ؟</a>
-            <SubmitButton handle={handleSubmit(onSubmit)} title={'ورود'}/>
+            <SubmitButton title={'ورود'}/>
         </div>
     </Form>
 }
