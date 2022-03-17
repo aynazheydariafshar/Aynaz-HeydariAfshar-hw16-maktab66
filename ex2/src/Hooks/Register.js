@@ -2,6 +2,7 @@ import {useState , useEffect} from 'react';
 import { Form } from 'react-bootstrap';
 import '../Asseste/Styles/Register.css'
 import Password from './Password';
+import SubmitButton from './SubmitButton';
 
 
 const Register = () => {
@@ -105,6 +106,7 @@ const Register = () => {
             </div>
         </div>    
         <Password />
+        <SubmitButton title={'ثپت نام'}/>
     </Form>;
 }
 
