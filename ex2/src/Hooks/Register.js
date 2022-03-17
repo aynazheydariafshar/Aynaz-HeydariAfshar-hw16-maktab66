@@ -1,6 +1,7 @@
 import {useState , useEffect} from 'react';
-import { Form, FormControl } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import '../Asseste/Styles/Register.css'
+import Password from './Password';
 
 
 const Register = () => {
@@ -83,11 +84,9 @@ const Register = () => {
                     }}
                 >
                 <option value={'chooseSmallCity'}>شهرستان</option>
-                {Object.keys(data).map((city) => {
-                    data[city].map((item,idx) => {
-                        <option key={idx} value={item}>{item}</option>
-                    })
-                })}
+                {Object.keys(data).map((item,idx) => (
+                    <option value={idx}>{data[item]}</option>
+                ))}
                 </Form.Control>
             </div>
             <div className='col-6'>  
@@ -105,6 +104,7 @@ const Register = () => {
                 </Form.Control>
             </div>
         </div>    
+        <Password />
     </Form>;
 }
 
