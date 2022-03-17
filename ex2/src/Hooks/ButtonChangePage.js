@@ -12,7 +12,7 @@ const Button = ({clickregister,clicklogin,checkitlogin,checkitregister}) => {
             onClick={clickregister}
             checked = {checkitregister}
         />
-        <label for="r-register">ثپت نام</label>
+        <label for="r-register">ثبت نام</label>
 
         <input 
             type="radio" 

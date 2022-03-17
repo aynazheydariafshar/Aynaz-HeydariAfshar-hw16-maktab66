@@ -1,6 +1,7 @@
 import {useState , useEffect} from 'react';
 import { Form } from 'react-bootstrap';
 import '../Asseste/Styles/Register.css'
+import Success from './Modal/Success';
 import Password from './Password';
 import SubmitButton from './SubmitButton';
 
@@ -10,12 +11,12 @@ const Register = () => {
     const [selectCity, stateselectCity] = useState('chooseCity');
     const [selectSmalCity, stateselectSmalCity] = useState('chooseSmallCity');
     const [data, setdata] = useState([]);
-    
+    const [modalShow, setModalShow] = useState(false);    
 
     const education = ['کاردانی', 'کارشناسی', 'کارشناسی ارشد', 'دکتری' , 'دیپلم'];
 
     const handleRegisterSubmit = () =>{
-            
+        setModalShow(true)
     }
 
     
@@ -32,10 +33,10 @@ const Register = () => {
     
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [selectCity]);
     
     return <Form className='p-4' onSubmit={handleRegisterSubmit}>
-        <h5 className='text-light my-4'>رایگان ثپت نام کنید</h5>
+        <h5 className='text-light my-4'>رایگان ثبت نام کنید</h5>
         <div className='row'>
             <div className='col-6'>
                 <Form.Control 
@@ -85,8 +86,8 @@ const Register = () => {
                     }}
                 >
                 <option value={'chooseSmallCity'}>شهرستان</option>
-                {Object.keys(data).map((item,idx) => (
-                    <option value={idx}>{data[item]}</option>
+                {data[selectCity] !== undefined && data[selectCity].map((item) => (
+                     <option value={item}>{item}</option>
                 ))}
                 </Form.Control>
             </div>
@@ -106,7 +107,11 @@ const Register = () => {
             </div>
         </div>    
         <Password />
-        <SubmitButton title={'ثپت نام'}/>
+        <SubmitButton title={'ثبت نام'}/>
+        <Success
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        />
     </Form>;
 }
 
