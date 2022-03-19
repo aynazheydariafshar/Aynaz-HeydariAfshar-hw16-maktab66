@@ -17,7 +17,11 @@ const Register = () => {
 
     const handleRegisterSubmit = (e) =>{
         e.preventDefault()
-        setShowModal(true)
+        if(selectCity === 'chooseCity' || selectSmalCity === 'chooseSmallCity'){
+            alert('please choose select')
+        }else{
+            setShowModal(true)
+        }
     }
 
     
