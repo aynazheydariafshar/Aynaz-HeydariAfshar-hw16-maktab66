@@ -115,7 +115,7 @@ const Register = () => {
         <SubmitButton title={'ثبت نام'}/>
         <Success
             show={showModal}            
-            onNo={() => setShowModal(false)}
+            onHide={() => setShowModal(false)}
         />
     </Form>;
 }

@@ -23,7 +23,7 @@ const Login = () => {
         </div>
         <Success
             show={showModal}            
-            onNo={() => setShowModal(false)}
+            onHide={() => setShowModal(false)}
         />
     </Form>
 }
