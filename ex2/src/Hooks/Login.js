@@ -9,9 +9,9 @@ import { useState } from 'react';
 const Login = () => {
     const [showModal, setShowModal] = useState(false);
 
-    const handleLoginSubmit = () =>{
+    const handleLoginSubmit = (e) =>{
+        e.preventDefault()
         setShowModal(true)
-        console.log(showModal)
     }
 
     return <Form className='p-4' onSubmit={handleLoginSubmit}>

@@ -11,12 +11,13 @@ const Register = () => {
     const [selectCity, stateselectCity] = useState('chooseCity');
     const [selectSmalCity, stateselectSmalCity] = useState('chooseSmallCity');
     const [data, setdata] = useState([]);
-    const [modalShow, setModalShow] = useState(false);    
+    const [showModal, setShowModal] = useState(false);
 
     const education = ['کاردانی', 'کارشناسی', 'کارشناسی ارشد', 'دکتری' , 'دیپلم'];
 
-    const handleRegisterSubmit = () =>{
-        setModalShow(true)
+    const handleRegisterSubmit = (e) =>{
+        e.preventDefault()
+        setShowModal(true)
     }
 
     
@@ -109,8 +110,8 @@ const Register = () => {
         <Password />
         <SubmitButton title={'ثبت نام'}/>
         <Success
-        show={modalShow}
-        onHide={() => setModalShow(false)}
+            show={showModal}            
+            onNo={() => setShowModal(false)}
         />
     </Form>;
 }
