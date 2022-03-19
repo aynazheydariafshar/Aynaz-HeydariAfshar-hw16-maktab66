@@ -7,10 +7,11 @@ import { useState } from 'react';
 
 
 const Login = () => {
-    const [modalShow, setModalShow] = useState(false);    
+    const [showModal, setShowModal] = useState(false);
 
     const handleLoginSubmit = () =>{
-        setModalShow(true)
+        setShowModal(true)
+        console.log(showModal)
     }
 
     return <Form className='p-4' onSubmit={handleLoginSubmit}>
@@ -21,8 +22,8 @@ const Login = () => {
             <SubmitButton title={'ورود'}/>
         </div>
         <Success
-            show={modalShow}
-            onHide={() => setModalShow(false)}
+            show={showModal}            
+            onNo={() => setShowModal(false)}
         />
     </Form>
 }

@@ -1,24 +1,20 @@
-import React from 'react';
 import { Modal , Button } from 'react-bootstrap';
 
 const Success = (props) => {
-    return (
-        <Modal
-          {...props}
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-        >
-          <Modal.Body>
-            <h4>با موفقیت ثپت شد</h4>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={props.onHide}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      );
-    }
-
-
+  return (
+    <div>
+      <Modal {...props} size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter" dir='rtl'>
+            عملیات با موفقیت انجام شد
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Button onClick={props.onNo}>خارج شوید</Button>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
+}
 
 export default Success;
