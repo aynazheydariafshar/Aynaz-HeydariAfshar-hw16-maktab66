@@ -1,8 +1,8 @@
 import './Asseste/Styles/App.css';
-import ButtonChangePage from './Hooks/ButtonChangePage';
+import ButtonChangePage from './Components/ButtonChangePage';
 import {useState} from "react";
-import Login from './Hooks/Login';
-import Register from "./Hooks/Register";
+import Login from './Components/Login';
+import Register from "./Components/Register";
 
 function App() {
   const [status , statestatus] = useState('login');

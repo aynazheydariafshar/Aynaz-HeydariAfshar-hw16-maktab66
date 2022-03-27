@@ -1,6 +1,6 @@
 import React , { useEffect , useState , useRef , useCallback , memo} from "react";
-import Button from "./Hooks/Button.js";
-import Title from "./Hooks/Title.js";
+import Button from "./Components/Button.js";
+import Title from "./Components/Title.js";
 /**
  * you should use useRef, useCallback, memo, useState.
  * don't remove console logs,
